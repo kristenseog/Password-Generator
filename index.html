@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="key.png">
+        <title>Random Password Generator</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+<div class="container">
+
+        <div class="pw-header"> 
+            <h1>Random Password Generator</h1>
+            <!-- <hr>
+            <img src="url or png"> -->
+            <p>Never use an insecure password again.</p>
+                <div class="pw">
+                    <span id="pwV1">Version-1</span>
+                    <button id="copyV1">copyV1</button>
+                </div>
+                <div class="pw">
+                    <span id="pwV2">Version-2</span>
+                    <button id="copyV2">copyV2</button>
+                </div>              
+
+        </div>
+
+        <div class="pw-body">
+            
+            <div class="form-control">
+                <label for="length">Password Length (8-30)</label>
+                <input id="length" value="15" min= 8 max="30" type="number"> 
+                
+            </div> 
+
+            <div class="form-control"> 
+                <label for="UpperCase">With UpperCase Letters</label>
+                <input id="UpperCase" type="checkbox">
+            </div> 
+            <div class="form-control"> 
+                <label for="LowerCase">With LowerCase Letters</label>
+                <input id="LowerCase" type="checkbox">
+            </div> 
+             <div class="form-control"> 
+                <label for="Numbers">With Numbers</label>
+                <input id="Numbers" type="checkbox">
+            </div> 
+             <div class="form-control"> 
+                <label for="Symbols">With Symbols</label>
+                <input id="Symbols" type="checkbox">
+            </div> 
+
+
+            <!-- <button class="generate" id="generate-el" onclick="passwordGen()">Generate Passwords</button> -->
+            <button class="generate" id="generate-el" onclick="generateVersion()">Generate Passwords</button>
+
+
+        </div>
+
+</div>
+
+        <br>
+
+    <!-- <div>
+
+        <div> 
+            <button>length variation</button>
+        </div>
+        <div> 
+            <button>With UpperCase Letter on/off switch</button>
+        </div>
+        <div>
+            <button>With LowerCase Letter on/off switch</button>
+        </div>
+        <div> 
+            <button>With Symbols on/off switch</button>
+        </div>
+        <div>
+            <button>With Numbers on/off switch</button>
+        </div>
+    </div> -->
+</div>
+
+<!-- <footer> 
+    <div>
+        <label for="comment">Comment</label>
+        <input id="comment" type="text" >
+    </div>
+</footer> -->
+
+
+    <!-- <table border:5px; padding: 10px; color>   
+        <tr>
+            <th>table header</th>
+            <th colspan="2">1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+        </tr>
+        <tr> 
+            <th>second row</th>
+            <th colspan="2">1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+        </tr>
+    </table>
+
+    <ul>
+        <li> categorize:
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </li>
+    </ul> -->
+
+    </body>
+</html>
