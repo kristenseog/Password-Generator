@@ -91,16 +91,7 @@ function passwordGen() {
     
     console.log(randomPassword);
 
-    // if (length < 8) { 
-    //     return ""
-    // } else {
-    //     return Xs[Math.floor(Math.random() * length)];  
-    // }
-    // if (length > 30) {
-    //     return ""
-    // } else {
-    //     return Xs[Math.floor(Math.random() * length)]; 
-}
+    
 
     //    pwElV1.textContent = randomPassword; //not working? after adding 2nd 
     //    pwElV2.textContent = randomPassword;
