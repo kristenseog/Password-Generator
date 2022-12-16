@@ -13,10 +13,12 @@ body {
     border: 10px solid rgb(0, 61, 0);
     padding: 30px 30px;
     background-color: rgb(30, 35, 30);
+    
 }
 
 .VersionContainer {
     display: flexbox;
+
 }
 
 .orgainzer {
@@ -29,7 +31,10 @@ body {
     min-width: 400px;
     /* width: auto; how to make content fit by going to the next line */
     width: auto; 
+    box-sizing: border-box;
 }
+
+
 
 .pw-header {
     padding: 1rem;
@@ -47,6 +52,8 @@ body {
     position: relative;
     padding: 1rem;
     overflow: auto;
+    width: 300px;
+
 }
 
 
