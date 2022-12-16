@@ -17,9 +17,17 @@ let generateEL = document.getElementById("generate-el") //generate button
 
 const pwElV1 = document.getElementById("pwV1");
 const pwElV2 = document.getElementById("pwV2");
+const pwElV3 = document.getElementById("pwV3");
+const pwElV4 = document.getElementById("pwV4");
+
+
+
 
 const copyElV1 = document.getElementById("copyV1"); //need to break into two version copy 1 & 2
 const copyElV2 = document.getElementById("copyV2"); //need to break into two version copy 1 & 2
+const copyElV3 = document.getElementById("copyV3"); 
+const copyElV4 = document.getElementById("copyV4"); 
+
 
 const lengthEl = document.getElementById("length");
 const upperEl = document.getElementById("UpperCase");
@@ -76,13 +84,19 @@ function passwordGen() {
 
     for (let i = randomPassword.length; i < length; i++) {
         const X = generateX()
+        console.log(X)
         randomPassword += X;
-        }       
+        console.log(randomPassword);
+    }       
+    
+    console.log(randomPassword);
 
-        pwElV1.textContent = randomPassword; //not working? after adding 2nd 
-        pwElV2.textContent = randomPassword;
+    //    pwElV1.textContent = randomPassword; //not working? after adding 2nd 
+    //    pwElV2.textContent = randomPassword;
 // console.log(randomPassword)
 // pwElV1.textContent = randomPassword
+
+    return randomPassword;
 }
 
 // how to i set it to generate two at a time??????
@@ -122,12 +136,13 @@ function passwordGen() {
         if (symbolEl.checked) {
             Xs.push(randomSymbolsGen());
         }
-       
-        if (Xs.length === 0) //what does this mean?
+       // Here we are validating taht the User chose at least one checkbox option
+        if (Xs.length === 0) { //what does this mean?
             return ""
-            // return "check at least one box to generate "
-            return Xs[Math.floor(Math.random() * Xs.length)];
-
+        } else {
+          // return "check at least one box to generate "
+            return Xs[Math.floor(Math.random() * Xs.length)];  // Xs = [5]
+        }
     }
 
 
@@ -172,18 +187,56 @@ function passwordGen() {
         alert("randomPassword copied to clipboard");
     })
 
+    copyElV3.addEventListener("click", () => {
+        const textarea = document.createElement("textarea");
+        const randomPassword = pwElV3.textContent;
+        
+        if(!randomPassword) { //what is this???
+            return;
+        }
+
+        textarea.value = randomPassword;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copyV3");
+        textarea.remove();
+        alert("randomPassword copied to clipboard");
+    })
+
+    copyElV4.addEventListener("click", () => {
+        const textarea = document.createElement("textarea");
+        const randomPassword = pwElV4.textContent;
+        
+        if(!randomPassword) { //what is this???
+            return;
+        }
+
+        textarea.value = randomPassword;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copyV4");
+        textarea.remove();
+        alert("randomPassword copied to clipboard");
+    })
 
 
 
     function generateVersion() {
         pwElV1.textContent = "";
         pwElV2.textContent = "";
-    
-        pwElV1.textContent += passwordGen();
-        pwElV2.textContent += passwordGen();
+        pwElV3.textContent = "";
+        pwElV4.textContent = "";
+
+        //pwElV1.textContent += passwordGen();
+        //pwElV2.textContent += passwordGen();
+        pwElV1.textContent = passwordGen();
+        pwElV2.textContent = passwordGen();
+       pwElV3.textContent = passwordGen();
+       pwElV4.textContent = passwordGen();
 
 
         //create an alert message here if none of the boxes are checked off**
+
     }
 
 
@@ -208,3 +261,4 @@ function passwordGen() {
 //     var alert = bootbox.alert('Massage')
 // alert.show();
 // setTimeout(function(){alert.modal('hide'); }, 4000);
+
