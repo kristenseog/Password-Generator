@@ -84,6 +84,9 @@ function passwordGen() {
         randomPassword += randomSymbolsGen()
     }
 
+    if (upperEl.checked === false && lowerEl.checked === false && numberEl.checked === false && symbolEl.checked === false) {
+        return "check at least one box to generate a password"
+    }
 
     for (let i = randomPassword.length; i < length; i++) {
         const X = generateX()
@@ -173,64 +176,65 @@ function passwordGen() {
         // const textarea = document.createElement("textarea");
         const randomPassword = pwElV1.textContent;
         
-        if(!randomPassword) { //what is this???
+        if(!randomPassword) { 
             return;
         }
-navigator.clipboard.writeText(randomPassword) //***
+            navigator.clipboard.writeText(randomPassword) //***
         // textarea.value = randomPassword;
         // document.body.appendChild(textarea);
         // textarea.select();
         // document.execCommand("copyV1");
         // textarea.remove();
-        alert("randomPassword copied to clipboard");
+        alert("RandomPassword copied to clipboard");
     })
 
     copyElV2.addEventListener("click", () => {
-        const textarea = document.createElement("textarea");
+        // const textarea = document.createElement("textarea");
         const randomPassword = pwElV2.textContent;
         
-        if(!randomPassword) { //what is this???
+        if(!randomPassword) { 
             return;
         }
-
-        textarea.value = randomPassword;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copyV2");
-        textarea.remove();
-        alert("randomPassword copied to clipboard");
+            navigator.clipboard.writeText(randomPassword)
+        // textarea.value = randomPassword;
+        // document.body.appendChild(textarea);
+        // textarea.select();
+        // document.execCommand("copyV2");
+        // textarea.remove();
+        alert("RandomPassword copied to clipboard");
     })
 
     copyElV3.addEventListener("click", () => {
-        const textarea = document.createElement("textarea");
+        // const textarea = document.createElement("textarea");
         const randomPassword = pwElV3.textContent;
         
         if(!randomPassword) { //what is this???
             return;
         }
+        navigator.clipboard.writeText(randomPassword)
 
-        textarea.value = randomPassword;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copyV3");
-        textarea.remove();
-        alert("randomPassword copied to clipboard");
+        // textarea.value = randomPassword;
+        // document.body.appendChild(textarea);
+        // textarea.select();
+        // document.execCommand("copyV3");
+        // textarea.remove();
+        alert("RandomPassword copied to clipboard");
     })
 
     copyElV4.addEventListener("click", () => {
-        const textarea = document.createElement("textarea");
+        // const textarea = document.createElement("textarea");
         const randomPassword = pwElV4.textContent;
         
         if(!randomPassword) { //what is this???
             return;
         }
-
-        textarea.value = randomPassword;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copyV4");
-        textarea.remove();
-        alert("randomPassword copied to clipboard");
+        navigator.clipboard.writeText(randomPassword)
+        // textarea.value = randomPassword;
+        // document.body.appendChild(textarea);
+        // textarea.select();
+        // document.execCommand("copyV4");
+        // textarea.remove();
+        alert("RandomPassword copied to clipboard");
     })
 
 
