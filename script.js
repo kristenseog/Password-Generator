@@ -65,6 +65,9 @@ const symbolEl = document.getElementById("Symbols");
 
 function passwordGen() {
     const length = lengthEl.value; 
+    if (length < 8 || length > 30) {
+        return "input appropriate length"
+    }
 
     let randomPassword = ""; //create a string to be filled in
 
@@ -167,18 +170,18 @@ function passwordGen() {
  }
     
     copyElV1.addEventListener("click", () => {
-        const textarea = document.createElement("textarea");
+        // const textarea = document.createElement("textarea");
         const randomPassword = pwElV1.textContent;
         
         if(!randomPassword) { //what is this???
             return;
         }
-
-        textarea.value = randomPassword;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copyV1");
-        textarea.remove();
+navigator.clipboard.writeText(randomPassword) //***
+        // textarea.value = randomPassword;
+        // document.body.appendChild(textarea);
+        // textarea.select();
+        // document.execCommand("copyV1");
+        // textarea.remove();
         alert("randomPassword copied to clipboard");
     })
 
